@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment, getPost} from './counterSlices'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
+import Link from 'next/link'
 
 function Counter() {
   const count = useSelector((state) => state.counter.value)
@@ -22,8 +23,7 @@ function Counter() {
         dispatch(getPost())
         reset()
       })
-      .catch((e) => console.log(e))
-      
+      .catch((e) => console.log(e))   
   }
 
   return (
@@ -73,7 +73,13 @@ function Counter() {
 
       <div>
         {post && post.map((item, index) => 
-          <div key={index}>{item.nama}</div>
+          <div key={item._id} className="border border-solid">
+            <h1>{item.nama}</h1>
+            <h4>{item.email}</h4>
+            <p>{item.pesan}</p>
+            {/* link this button to update page coz we need form for new data */}
+            <Link href={"/edit/" + item._id}>Edit</Link>
+          </div>
         )
         }
       </div>

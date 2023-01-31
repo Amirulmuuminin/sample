@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input{
+    border: 1px solid;
+}
+button{
+    border: 2px solid;
+    text-align: center;
+}
+div{
+    width: 20em;
+    margin: 1em auto;
+    text-align: center;
+}
