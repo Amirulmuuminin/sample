@@ -1,11 +1,11 @@
-import mongoose from "mongoose";
 import Pesan from "@/model/model"
+import connectDb from "@/db/connect";
 
 
 export default async function addTest(req, res) {
     try {
     
-      await  mongoose.connect("mongodb+srv://amirul:muminin@cluster0.8kmrj2i.mongodb.net/?retryWrites=true&w=majority", console.log("db okay"))
+      await  connectDb
     
       const test = await Pesan.find();
         

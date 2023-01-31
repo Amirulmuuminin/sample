@@ -1,5 +1,5 @@
 import Pesan from "@/model/model"
-import mongoose from "mongoose";
+import connectDb from "@/db/connect";
 
 /**
  * @param {import('next').NextApiRequest} req
@@ -7,7 +7,7 @@ import mongoose from "mongoose";
  */
 export default async function addTest(req, res) {
   try {
-    await  mongoose.connect("mongodb+srv://amirul:muminin@cluster0.8kmrj2i.mongodb.net/?retryWrites=true&w=majority", console.log("db okay"))
+    await connectDb
 
     console.log('CREATING DOCUMENT');
     const test = await Pesan.create(req.body);
