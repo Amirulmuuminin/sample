@@ -45,7 +45,7 @@ function Counter() {
       </div>
 
       <div>
-        {/* fungsi on submit jangan diinvoke */}
+        {/* fungsi onSubmit jangan diinvoke */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             // atribut wajib: name, {...register("name")}
@@ -72,7 +72,7 @@ function Counter() {
       </div>
 
       <div>
-        {post && post.map((item, index) => 
+        {isComplete && post.map((item, index) => 
           <div key={item._id} className="border border-solid">
             <h1>{item.nama}</h1>
             <h4>{item.email}</h4>

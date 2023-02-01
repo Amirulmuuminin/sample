@@ -7,8 +7,7 @@ export default async function addTest(req, res) {
     
       await  connectDb
     
-      const test = await Pesan.find();
-        
+      const test = await Pesan.find().sort({_id: -1}) // sort({_id: -1}) terbaru tampil dulu
       console.log("succes")
   
       res.json(test);
