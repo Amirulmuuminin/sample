@@ -8,10 +8,11 @@ const deletePesan = async(req, res) => {
     console.log("db connected")
 
     console.log("deleting")
-    await Pesan.deleteOne({_id: req.body._id})
+    // gunakan req.query untuk delete method, jangan req.body!!!
+    const hapus = await Pesan.deleteOne({_id: req.query.id})
     console.log("item deleted")
 
-    res.json("item deleted")
+    res.json(hapus)
 }
 
 export default deletePesan

@@ -18,6 +18,7 @@ function Counter() {
   }, [])
 
   const onSubmit = (data) => {
+    console.log("created")
     axios.post("/api/createPesan", data)
       .then(() => {
         dispatch(getPost())
@@ -25,6 +26,17 @@ function Counter() {
       })
       .catch((e) => console.log(e))   
   }
+
+  const deletePesan = (id) => {
+ // parameter kedua untuk delete method bukan data req.body
+ // gunakan req.query seperti dibawah ini untuk delete method
+    axios.delete(`/api/deletePesan/?id=${id}`)
+      .then(() => {
+        dispatch(getPost())
+      })
+      .catch((e) => console.log(e))
+  }
+
 
   return (
     <div>
@@ -79,6 +91,7 @@ function Counter() {
             <p>{item.pesan}</p>
             {/* link this button to update page coz we need form for new data */}
             <Link href={"/edit/" + item._id}>Edit</Link>
+            <button onClick={() => deletePesan(item._id)}>Delete</button>
           </div>
         )
         }
