@@ -19,7 +19,7 @@ function Counter() {
 
   const onSubmit = (data) => {
     console.log("created")
-    axios.post("/api/createPesan", data)
+    axios.post("/api/pesan", data)
       .then(() => {
         dispatch(getPost())
         reset()
@@ -30,7 +30,7 @@ function Counter() {
   const deletePesan = (id) => {
  // parameter kedua untuk delete method bukan data req.body
  // gunakan req.query seperti dibawah ini untuk delete method
-    axios.delete(`/api/deletePesan/?id=${id}`)
+    axios.delete(`/api/pesan/?id=${id}`)
       .then(() => {
         dispatch(getPost())
       })

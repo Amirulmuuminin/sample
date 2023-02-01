@@ -4,7 +4,7 @@ import axios from 'axios'
 export const getPost = createAsyncThunk(
     'users/fetchByIdStatus',
     async (thunkAPI) => {
-      const response = await axios.get("/api/getPesan")
+      const response = await axios.get("/api/pesan")
       return response.data
     }
   )

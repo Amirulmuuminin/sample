@@ -15,7 +15,7 @@ const editForm = () => {
 
     const onSubmit = async(data) => {
         data._id = id
-        await axios.patch("http://localhost:3000/api/updatePesan", data)
+        await axios.patch("http://localhost:3000/api/pesan", data)
         dispatch(getPost())
         router.push("/")
     }
