@@ -1,6 +1,8 @@
 import Card from "@/components/Card";
 import InputForm from "@/components/InputForm";
+import Search from "@/components/Search";
 import Counter from "@/redux/slices/Counter";
+
 
 
 
@@ -9,7 +11,7 @@ const index = () => {
     <div>
       <Counter />
       <InputForm />
-      <Card />
+      <Search />
     </div>
   )
 }

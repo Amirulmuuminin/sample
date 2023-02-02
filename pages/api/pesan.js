@@ -39,7 +39,6 @@ export default async(req, res) => {
 
     if(req.method === "DELETE") {
         try {
-            //gunakan findOneAndUpdate
             // gunakan req.query untuk delete method, jangan req.body agar axios lebih mudah
             //req.query.id karena kita set id pada query (`/api/pesan/?id=${id}`)
             const data = await Pesan.deleteOne({_id: req.query.id})

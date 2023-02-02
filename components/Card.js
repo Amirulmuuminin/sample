@@ -26,7 +26,7 @@ const Card = () => {
 
   return (
     <div>
-        {isComplete && post.map((item, index) => 
+        {isComplete && post.map((item,) => 
           <div key={item._id} className="border border-solid">
             <h1>{item.nama}</h1>
             <h4>{item.email}</h4>
