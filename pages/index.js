@@ -1,17 +1,15 @@
-import Card from "@/components/Card";
-import InputForm from "@/components/InputForm";
-import Search from "@/components/Search";
-import Counter from "@/redux/slices/Counter";
-
-
-
+import Header from "@/components/todo/Header"
+import Main from "@/components/todo/Main"
 
 const index = () => {
   return (
-    <div>
-      <Counter />
-      <InputForm />
-      <Search />
+    <div >
+      <Header />
+      {/* main */}
+      <div className=' bg-[#fbeee5] p-5 rounded-t-3xl h-full'>
+        <Main />
+      </div>
+
     </div>
   )
 }
